@@ -1,11 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-cn">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <link rel="stylesheet" href="style.css"/>
+    <title>Twitchtv</title>
 </head>
 <body>
-   
+   <div class="g-body">
+       <div class="u-tabs">
+           <div class="tabs-all">All</div>
+           <div class="tabs-online">Online</div>
+           <div class="tabs-offline">Offline</div>
+       </div>
+       <div class="u-filter"><i class="fa fa-search" aria-hidden="true"></i><input type="text" name="filter" class="filter" placeholder="filter"></div>
+       <div class="u-content"></div>
+   </div>
    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script> 
+   <script src="https://use.fontawesome.com/3b44fa69a9.js"></script>
+   <script src="javascript.js"></script>
 </body>
 </html>

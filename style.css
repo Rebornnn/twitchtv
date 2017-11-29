@@ -1,0 +1,36 @@
+body{
+    background: #;
+}
+
+.g-body{
+    width: 400px;
+    margin: 0 auto;
+}
+
+.u-tabs{
+    width: 100%;
+    height: 40px;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+}
+
+.u-tabs div{
+    flex-grow: 1;
+    text-align: center;
+}
+
+
+.u-filter{
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
+
+.filter{
+    width: 300px;
+}
+
+.u-content{
+    width: 100%;
+}
