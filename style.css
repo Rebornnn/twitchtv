@@ -1,5 +1,5 @@
 body{
-    background: #;
+    background: #F79F80;
 }
 
 .g-body{
@@ -12,23 +12,49 @@ body{
     height: 40px;
     display: -webkit-flex;
     display: flex;
-    align-items: center;
+    align-items: stretch;
+    background: #F47564;
 }
 
 .u-tabs div{
     flex-grow: 1;
     text-align: center;
+    line-height: 40px;
+    color: white;
 }
 
+.triangle{position: relative;}
+.triangle::before{
+    position: absolute;
+    content: '';
+
+}
+
+.u-tabs div+div{
+    border-left: 1px dotted white;
+} 
 
 .u-filter{
     position: relative;
     width: 100%;
     text-align: center;
+    padding:15px 0;
+    box-shadow: .5px 0 0 #F47564 inset,-0.5px 0 0 #F47564 inset;
+    border-bottom: 1px solid gray;
+}
+
+.fa-search{
+    position: relative;
+    color: gray;
+    left:20px;
 }
 
 .filter{
-    width: 300px;
+    width: 280px;
+    padding-left: 20px;
+    border-width: 1px; 
+    border-radius: 10px/50%;
+    outline: none;
 }
 
 .u-content{
