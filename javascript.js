@@ -1,19 +1,10 @@
-<<<<<<< HEAD
-$(document).ready(function(){
-    $.getJSON('https://wind-bow.gomix.me/twitch-api/streams/freecodecamp?callback=?',function(data){
-        console.log(data);
-    });
-});
-
-
-["ESL_SC2", "OgamingSC2", "cretetion", "freecodecamp", "storbeck", "habathcx", "RobotCaleb", "noobs2ninjas"]
-=======
 function getCard(){
     var users=["ESL_SC2", "OgamingSC2", "cretetion", "freecodecamp", "storbeck", "habathcx", "RobotCaleb", "noobs2ninjas"];
 
     function setCard(data){
-        var card=$('<div></div>');
-        card.attr('class','card');
+        console.log(data);
+        var m_card=$('<a></a>');
+        m_card.attr({'class':'m-card','target':'blank'});
 
         //var result=data.stream.channel;
         var html='';
@@ -25,20 +16,25 @@ function getCard(){
             status='off';
         }
 
-        html='<a href="';
-        html+=data.url;
-        html+='" target="blank"><img src="';
-        html+=data.logo;
-        html+='"><div class="content"><p class="username">';
-        html+=data.display_name;
-        html+='</p><p class="description">';
-        html+=data.status;
-        html+='</p></div><div class="status">';
-        html+=status;
-        html+='</div></a>';
+        if(data.status===null){
+            data.status='';
+        }else if(data.status.length>42){
+            data.status=data.status.slice(0,43)+'...';
+        }
 
-        card.html(html);
-        $('.u-cards').append(card);
+        m_card.attr('href',data.url);
+        html='<li class="card"><img src="';
+        html+=data.logo;
+        html+='"><span class="username">';
+        html+=data.display_name;
+        html+='</span><span class="status">';
+        html+=status;
+        html+='</span><span class="description">';
+        html+=data.status;
+        html+='</span></li>';
+
+        m_card.html(html);
+        $('.u-cards').append(m_card);
     }
 
     for(var i=0;i<users.length;i++){
@@ -62,4 +58,4 @@ $(document).ready(function(){
     getCard();
     triangle();
 });
->>>>>>> 56b6ebc9389a4a4dba91bc87bc7b5e63adb9e86b
+
