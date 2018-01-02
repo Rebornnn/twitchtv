@@ -6,15 +6,10 @@ function getCard(){
         var m_card=$('<a></a>');
         m_card.attr({'class':'m-card','target':'blank'});
 
-        //var result=data.stream.channel;
         var html='';
-        var status='';
+        //var status='';
 
-        if(data.stream){
-            status='on';
-        }else{
-            status='off';
-        }
+
 
         if(data.status===null){
             data.status='';
@@ -35,13 +30,42 @@ function getCard(){
 
         m_card.html(html);
         $('.u-cards').append(m_card);
+
+        //判别在线状态
+/*        $.ajax({
+            dataType:'jsonp',
+            url:'https://wind-bow.gomix.me/twitch-api/streams/'+encodeURIComponent(data.name)+'?callback=?',
+            success:function(result){
+                    if(result.stream){
+                        status='on';
+                        $('.status').val(status);
+                    }else{
+                        status='off';
+                        $('.status').val(status);
+                    }
+                }
+        });*/
     }
+
 
     for(var i=0;i<users.length;i++){
         $.ajax({
             dataType:'jsonp',
             url:'https://wind-bow.gomix.me/twitch-api/channels/'+encodeURIComponent(users[i])+'?callback=?',
             success:setCard
+        });
+        $.ajax({
+            dataType:'jsonp',
+            url:'https://wind-bow.gomix.me/twitch-api/users/'+encodeURIComponent(users[i])+'?callback=?',
+            success:function(result){
+                if(result.stream){
+                    $('.status').val('on');
+                    console.log($('.status').val());
+                }else{
+                    $('.status').val('off');
+                    console.log($('.status').val());
+                }
+            }
         });
     }
 
