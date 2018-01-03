@@ -1,0 +1,5 @@
+- 小总结
+    - jquery中ajax在jsonp模式下，不能设置`async：false`
+    - ajax是异步的，一定要注意回调函数执行顺序
+    - 行内元素在块级元素内垂直对齐会有3px的bug
+    - 继续研究vertical-align、linebox、line-height之间关系

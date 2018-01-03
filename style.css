@@ -107,6 +107,7 @@ body{
     position: absolute;
     line-height: 50px;
     right: 20px;
+    color: #F47564;
 }
 
 .card .description{
@@ -116,5 +117,7 @@ body{
 }
 
 
-
+.hide{
+    display: none;
+}
 
